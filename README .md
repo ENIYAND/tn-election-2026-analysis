@@ -1,4 +1,4 @@
-# Decoding the 2026 Tamil Nadu Assembly Election
+# 🗳 Decoding the 2026 Tamil Nadu Assembly Election
 ### Resume Project Challenge #21 — Codebasics
 
 > A data-only analysis for AtliQ Media's one-hour TV show on the 2026 Tamil Nadu Assembly Election results.
