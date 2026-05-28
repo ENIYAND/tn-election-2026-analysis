@@ -267,12 +267,8 @@ pip install -r requirements.txt
 ---
 
 ## 🔗 Links
-
-- 📹 **Video walkthrough**: [YouTube / Google Drive link]
-- 📊 **Live dashboard**: [Streamlit Cloud link]
-- 💼 **LinkedIn post**: [LinkedIn post link]
-- 📋 **RPC submission**: [Codebasics RPC submission link]
-
+- 📹 **Video walkthrough**: https://www.youtube.com/watch?v=Qwx7s5R0NQs
+- 📊 **Live dashboard**: https://tn-election-2026-analysis-udpsdga3ixus4x6d2dicr6.streamlit.app/
 ---
 
 ## 📝 License
