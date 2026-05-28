@@ -73,19 +73,26 @@ st.set_page_config(
 add_bg_image('/content/bg_image.png', opacity=0.06)
 
 # ─────────────────────────────────────────────
-# LOAD DATA — direct path, no drive.mount
+# LOAD DATA — Smart Path Strategy
 # ─────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    # Tries current directory first, then /content
-    for path in ['tn_election_combined.csv',
-                 '/content/tn_election_combined.csv']:
+    # Looks for the file in priority order across GitHub and Colab environments
+    search_paths = [
+        'data/processed/tn_election_combined.csv',  # Added: Direct path inside your GitHub repo layout
+        'tn_election_combined.csv',                  # Backup: If the file is right next to app.py
+        '/content/tn_election_combined.csv'          # Backup: If running/testing inside Google Colab
+    ]
+    
+    for path in search_paths:
         try:
+            print(f"🔄 Attempting to load data from: {path}")
             return pd.read_csv(path)
         except FileNotFoundError:
             continue
+            
     st.error("❌ Data file not found. Make sure tn_election_combined.csv "
-             "is in the same folder as app.py")
+             "is uploaded to your GitHub repository under 'data/processed/'.")
     st.stop()
 
 combined = load_data()
